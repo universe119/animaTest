@@ -1,8 +1,12 @@
 const btn = document.querySelector("button");
 const box = document.querySelector("article");
+const title = document.querySelector("h1");
 
 // btn click event
 btn.addEventListener("click", () => {
+	// 색상 모션 처리
+	// 색상값을 미리 지정된 키워드명이 아닌 16진수 표기법으로 변경해서 적용
+
 	// call Anime
 	// new Anime(동작대상, {변경할css속성 프로퍼티}, {duration:모션시간})
 	// 속성값 설정시 px단위는 숫자로만 입력
@@ -18,8 +22,10 @@ btn.addEventListener("click", () => {
 			width: 300,
 			top: "50%",
 			left: "50%",
-			opacity: 0,
+			opacity: 0.5,
+			backgroundColor: "#ff69b4",
 		},
 		{ duration: 1000 }
 	);
+	new Anime(title, { color: "#ff69b4", fontSize: 100 }, { duration: 2000 });
 });

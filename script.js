@@ -1,4 +1,19 @@
 const btns = document.querySelectorAll("button");
+btns.forEach((btn) => {
+	btn.addEventListener("click", (event) => {
+		//event 객체 안쪽의 target property에는 이벤트가 발생한 대상(DOM)정보가 담겨 있음
+		// console.log(event);
+		console.dir(event.target.dataset.pos);
+		// console.log(event.target.getAttribute("data-pos"));
+		// parseInt(문자화된 숫자값) : 정수로반환
+		// parseFloat(문자화된 숫자값) : 실수로 반환 (소숫점 아래까지 포함된 숫자)
+		// Anime안에 스크립트가 문자로 받으면 에러나서 parseInt로 형변환함.
+		new Anime(window, { scroll: parseInt(event.target.dataset.pos) });
+	});
+});
+
+/* scroll 끝
+const btns = document.querySelectorAll("button");
 const posArr = [0, 1000, 2000, 3000, 4000];
 // 미션 - 위의 3개의 이벤트 구문을 반복문을 통해 하나로 축약
 // 1시 20분까지
@@ -25,7 +40,7 @@ btns.forEach((btn, idx) => {
 // btn3.addEventListener("click", () => {
 // 	new Anime(window, { scroll: 4000 }, { duration: 500 });
 // });
-
+*/
 /* scroll 전 작업
 const btn = document.querySelector("button");
 const box = document.querySelector("article");

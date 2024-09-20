@@ -101,9 +101,9 @@ class Anime {
 		};
 
 		/*
-          Object.keys(easingPresets).map((key) => {
-              if (this.easeType === key) easingProgress = BezierEasing(easingPresets[key][0], easingPresets[key][1], easingPresets[key][2], easingPresets[key][3])(progress);
-          });
+        Object.keys(easingPresets).map((key) => {
+            if (this.easeType === key) easingProgress = BezierEasing(easingPresets[key][0], easingPresets[key][1], easingPresets[key][2], easingPresets[key][3])(progress);
+        });
           */
 
 		Object.keys(easingPresets).map(
@@ -113,17 +113,17 @@ class Anime {
 		);
 
 		/*
-          if (this.isBg) {
+        if (this.isBg) {
               const result = currentValue.map((curVal, idx) => curVal + (value[idx] - curVal) * easingProgress);
-              return [progress, result];
-          } else {
+            return [progress, result];
+        } else {
               const result = currentValue + (value - currentValue) * easingProgress;
-              return [progress, result];
-          }
+            return [progress, result];
+        }
           */
 
 		/*
-          return this.isBg
+        return this.isBg
               ? [progress, currentValue.map((curVal, idx) => curVal + (value[idx] - curVal) * easingProgress)]
               : [progress, currentValue + (value - currentValue) * easingProgress];
           */

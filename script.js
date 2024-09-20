@@ -19,13 +19,26 @@ btn.addEventListener("click", () => {
 	new Anime(
 		box,
 		{
-			width: 300,
-			top: "50%",
-			left: "50%",
-			opacity: 0.5,
-			backgroundColor: "#ff69b4",
+			left: 500,
 		},
-		{ duration: 1000 }
+		{
+			duration: 1000,
+			// 상위 Anime구문이 끝나는 바로 그 순간 이어서 동기적(이전 작업이 모든 끝난 이후에) 으로 새로운 모션을 이어서 실행
+			callback: () =>
+				new Anime(
+					box,
+					{ top: 500, backgroundColor: "#04b568" },
+					{
+						duration: 1000,
+						// 계속해서 callback으로 모션을 시퀀셜 처리가능
+						callback: () =>
+							new Anime(
+								box,
+								{ left: 0, backgroundColor: "#02b588" },
+								{ duration: 1000 }
+							),
+					}
+				),
+		} // , ease: (0.49, 0.34, 0.59, 1.54) 추후 다시
 	);
-	new Anime(title, { color: "#ff69b4", fontSize: 100 }, { duration: 2000 });
 });

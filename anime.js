@@ -24,11 +24,11 @@ class Anime {
 		let currentValue = null;
 
 		//currentValue = parseFloat(getComputedStyle(this.selector)[key]);
-		currentValue = this.selector.scrollY;
+		// currentValue = this.selector.scrollY;
 		key === "scroll"
 			? (currentValue = this.selector.scrollY)
-			: //: (currentValue = parseFloat(getComputedStyle(this.selector)[key]));
-			  (currentValue = this.selector.scrollY);
+			: (currentValue = parseFloat(getComputedStyle(this.selector)[key]));
+		// currentValue = this.selector.scrollY;
 
 		if (type === "percent") {
 			const parentW = parseInt(
@@ -132,8 +132,7 @@ class Anime {
 			progress,
 			this.isBg
 				? currentValue.map(
-						(curVal, idx) =>
-							curVal + (value[idx] - curVal) * easingProgress
+						(curVal, idx) => curVal + (value[idx] - curVal) * easingProgress
 				  )
 				: currentValue + (value - currentValue) * easingProgress,
 		];
@@ -142,9 +141,7 @@ class Anime {
 	setValue(key, result, type) {
 		if (type === "percent") this.selector.style[key] = result + "%";
 		else if (type === "color")
-			this.selector.style[
-				key
-			] = `rgb(${result[0]},${result[1]},${result[2]})`;
+			this.selector.style[key] = `rgb(${result[0]},${result[1]},${result[2]})`;
 		else if (key === "opacity") this.selector.style[key] = result;
 		else if (key === "scroll") this.selector.scroll(0, result);
 		else this.selector.style[key] = result + "px";

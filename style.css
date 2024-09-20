@@ -12,3 +12,19 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+section {
+    width: 1000px;
+    height: 800px;
+    border: 1px solid black;
+    position: relative;
+
+}
+article {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}

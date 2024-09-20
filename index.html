@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src=""></script>
+    <!-- anime.js는 먼저 읽지 않아서 defer를 안썼움 -->
     <script src="anime.js"></script>
+    <!-- script.js는 바디가 먼저 읽어야하니깐 defer를 넣음 -->
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <button>button</button>
+    <section>
+        <article></article>
+    </section>
     
 </body>
 </html>

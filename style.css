@@ -13,9 +13,25 @@ a {
     color: inherit;
 }
 
+
+body {
+    height: 500vh;
+    background-image: linear-gradient(to bottom, red, hotpink, lightgreen, green, aqua, blue);
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+nav button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* scroll 전 작업했던 이력
 h1 {
     font: bold 50px/1 "arial";
-    
+
 }
 section {
     width: 1000px;
@@ -31,4 +47,4 @@ article {
     position: absolute;
     top: 0px;
     left: 0px;
-}
+} */
